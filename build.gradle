@@ -16,5 +16,7 @@ repositories {
 dependencies {
 	implementation('io.jsonwebtoken:jjwt:0.6.0')
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	compileOnly 'org.projectlombok:lombok:1.18.12'
+	annotationProcessor 'org.projectlombok:lombok:1.18.12'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }

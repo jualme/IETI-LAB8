@@ -8,58 +8,47 @@ import javax.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * @author Santiago Carrillo
- * 8/21/17.
- */
+/** @author Santiago Carrillo 8/21/17. */
 @Service
-public class UserServiceImpl
-    implements UserService
-{
+public class UserServiceImpl implements UserService {
 
-    private List<User> users = new ArrayList<>();
+  private List<User> users = new ArrayList<>();
 
+  @Autowired
+  public UserServiceImpl() {}
 
-    @Autowired
-    public UserServiceImpl()
-    {
+  @PostConstruct
+  private void populateSampleData() {
+    users.add(new User("test@mail.com", "password", "Andres", "Perez"));
+  }
+
+  @Override
+  public List<User> getUsers() {
+    return users;
+  }
+
+  @Override
+  public User getUser(Long id) {
+    return users.get(0);
+  }
+
+  @Override
+  public User createUser(User user) {
+    return users.get(0);
+  }
+
+  @Override
+  public User findUserByEmail(String email) {
+    return users.get(0);
+  }
+
+  @Override
+  public User findUserByEmailAndPassword(String email, String password) {
+      User user = users.get(0);
+    if (user.getEmail().equals(email) && user.getPassword().equals(password)){
+        return user;
+    }else{
+        return null;
     }
-
-    @PostConstruct
-    private void populateSampleData()
-    {
-        users.add( new User( "test@mail.com", "password", "Andres", "Perez" ) );
-    }
-
-
-    @Override
-    public List<User> getUsers()
-    {
-        return users;
-    }
-
-    @Override
-    public User getUser( Long id )
-    {
-        return users.get( 0 );
-    }
-
-    @Override
-    public User createUser( User user )
-    {
-        return users.get( 0 );
-    }
-
-    @Override
-    public User findUserByEmail( String email )
-    {
-        return users.get( 0 );
-    }
-
-    @Override
-    public User findUserByEmailAndPassword( String email, String password )
-    {
-        return users.get( 0 );
-    }
-
+  }
 }
