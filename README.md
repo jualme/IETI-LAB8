@@ -10,35 +10,34 @@
 1. Clone this repository. Compile and run the Spring Boot project.
  
 2. Verify that authentication works by issuing the following command from the console:
-   
-   ```
-   curl -H "Content-Type: application/json" -X POST -d '{"username":"xyz","password":"password"}' http://localhost:8080/user/login
-   ```
-If you don't have the *curl* utility installed, try using the *Postman* application.
+
+**This only works in Java 8**
+If Java 11 is used, I get this error
+
+![Java11Error](https://github.com/jualme/IETI-LAB8/blob/master/Images/Login%20post1.PNG)    
+
+With Java 8
+
+![Java8Fix](https://github.com/jualme/IETI-LAB8/blob/master/Images/Login%20Fix.PNG)  
 
 3. Open the following url and try to understand the message you get from the server:
 
 http://localhost:8080/api/test
+
+![Test1](https://github.com/jualme/IETI-LAB8/blob/master/Images/test1.PNG)  
 
 Then try to locate the code fragment where the exception is thrown.
 
 4. Comment the line 13 *@Bean* on the *SpringBootSecureApiApplication* class. Re-run the project and go to the endpoint again:
 
 http://localhost:8080/api/test
+
+![Test2](https://github.com/jualme/IETI-LAB8/blob/master/Images/test2.PNG)  
                     
-Why do you think it works now? Discuss your findings with your classmates.                    
-                    	
-5. Implement the logic to verify the user's credentials on the *UserController* and the *UserServiceImpl* classes.
+Why do you think it works now? Discuss your findings with your classmates.           
 
-6. Add the *TaskController* and services implemented on the previous lab. Ensure the endpoints are exposed under the */api* path. 
+* Works because the security for the path api/* was disabled         
 
-7. Verify that your implementation secures all the exposed methods under the */api* path in your API.
-
-8. Add the following annotation on top of your *@RequestMapping* annotation on your REST controllers (to avoid the [Cross-origin access restriction](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)  )
-    
-    ````
-    @CrossOrigin(origins = "http://localhost:3000")
-    ````
     
 ### Part 2: Consume the API from ReactJS project
 
