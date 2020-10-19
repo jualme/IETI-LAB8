@@ -38,6 +38,17 @@ Why do you think it works now? Discuss your findings with your classmates.
 
 * Works because the security for the path api/* was disabled         
 
+5. Implement the logic to verify the user's credentials on the *UserController* and the *UserServiceImpl* classes.
+
+![Security1](https://github.com/jualme/IETI-LAB8/blob/master/Images/Logincheck1.PNG)  
+
+![Security2](https://github.com/jualme/IETI-LAB8/blob/master/Images/Logincheck2.PNG)  
+
+6. Add the *TaskController* and services implemented on the previous lab. Ensure the endpoints are exposed under the */api* path. 
+
+7. Verify that your implementation secures all the exposed methods under the */api* path in your API.
+
+![endpoint](https://github.com/jualme/IETI-LAB8/blob/master/Images/TestEndpoint.PNG)  
     
 ### Part 2: Consume the API from ReactJS project
 

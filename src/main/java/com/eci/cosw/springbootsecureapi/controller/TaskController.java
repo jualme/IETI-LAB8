@@ -28,12 +28,12 @@ public class TaskController {
         return taskService.getTask(id);
     }
 
-    @GetMapping("/{dueDate}")
+    @GetMapping("/duedate/{dueDate}")
     List<Task> getAllByDueDate(@PathVariable LocalDate dueDate) {
         return taskService.findTaskByDueDate(dueDate);
     }
 
-    @GetMapping("/{status}")
+    @GetMapping("/status/{status}")
     List<Task> getAllByStatus(@PathVariable String status) {
         return taskService.findTaskByStatus(status);
     }
