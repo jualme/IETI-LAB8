@@ -52,48 +52,18 @@ Why do you think it works now? Discuss your findings with your classmates.
     
 ### Part 2: Consume the API from ReactJS project
 
-1. Open the *Task Planner App* React JS project.
-
-2. Install the axios node package
-
-    ````
-     npm install axios --save
-    ````
+**Done**
 
 ##### Implement an API call in the Login View
     
 3. Make a first request to the API to authenticate on the method *componentDidMount()*:
 
-    ```` Javascript
-           axios.post('http://localhost:8080/user/login', {
-                 username: 'xyz',
-                 password: 'password'
-             })
-                 .then(function (response) {
-                     console.log(response.data);
-                 })
-                 .catch(function (error) {
-                     console.log(error);
-                 });
-    ````
+![axiosLogin](https://github.com/jualme/IETI-LAB8/blob/master/Images/AxiosLogin.PNG)  
     
-4. Save the returned authentication token into the local storage.
-
-5. Implement the logic to validate if the user has a valid token. Then redirect to the Main View.
+**Done** 
 
 ##### Make other calls to your API
 
-6. Create an instance of the Axios client that contains the token inside the Authorization header
+![AxiosPost](https://github.com/jualme/IETI-LAB8/blob/master/Images/AxiosPost.PNG)  
 
-    ```` Javascript
-        this.axios = axios.create({
-                baseURL: 'http://localhost:8080/api/',
-                timeout: 1000,
-                headers: {'Authorization': 'Bearer ' + token}
-            });
-    ````
-    
-    
-7. Make a request to the API with the Axios client instance for retrieving the Tasks List.
-
-8. Create an additional call to Post new Tasks to the API.
+**Done**

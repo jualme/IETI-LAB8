@@ -25,6 +25,7 @@ public class TaskServiceimpl implements TaskService {
             .id(1L)
             .description("Test task")
             .dueDate(LocalDate.of(2020, 1, 10))
+                .responsible(new User("test@mail.com","password","Test","Ieti"))
             .status("Pending")
             .build());
   }
